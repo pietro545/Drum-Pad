@@ -1,0 +1,112 @@
+
+@mixin center(){
+    position: fixed;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin rounded-box(){
+    border-radius: 25%;
+}
+
+@mixin shadow() {
+    box-shadow: 0 0 5px 5px #756D54;
+}
+html{
+    background-color: #71605A
+}
+#drum-machine{
+    background-color: #6D545D;
+    width: 50vw;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 5rem;
+    @include rounded-box;
+    @include center;
+    @include shadow;
+
+    .author{
+        font-size: 1rem;
+        .text{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-style: italic;
+        
+        }
+     
+    }
+       
+    #pads-container{
+        
+        .pad{
+            padding: 0.2rem;
+            .drum-pad{
+                padding: auto;
+                width: 100%;
+                @include rounded-box;
+                @include shadow;
+                background-color: #BAD558;
+            }
+        }
+        
+    }
+
+    #display{
+        width: fit-content;
+        input{
+            background-color: #808155;
+            @include shadow;
+
+        }
+    }
+    
+   
+}
+
+
+@media only screen and (max-width: 1166px) {
+    #drum-machine{
+        display:flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 1rem; 
+        width: 90%;
+        .author{
+            font-size: 1rem;
+            text-align: center;
+            .text{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-style: italic;
+            
+            }
+         
+        }
+        
+        #pads-container{
+        
+            .pad{
+                padding: 2px;
+                
+            }            
+        }
+        #display{
+            width: 100%;
+            margin: auto;
+            input{
+                text-align: center;
+            }
+        }
+        
+    }
+}
+
+@media only screen and (max-width: 715px){
+    #drum-machine{
+        width: 90%;
+        margin: auto;
+    }
+}
+
